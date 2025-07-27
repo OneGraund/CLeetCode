@@ -16,5 +16,5 @@ Better solution would be to create a hashmap. Intuition goes like that:
 - if found, nice
 
 **Current stats:**
-- *Runtime*: 107 ms
-- *Memory*: 8.55 MB
+- *Runtime*: 99 ms
+- *Memory*: 8.67 MB
