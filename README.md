@@ -20,7 +20,8 @@ Better solution would be to create a hashmap. Intuition goes like that:
 - *Memory*: 8.67 MB
 
 I did make a hashmap solution, which is twice as inefficient as the bruteforce one... How? No idea yet
+Increasing the hashmap size to twice the `numsSize` resulted in 10 ms runtime!!! This is amazing, lol
 
 **Current hashmap stats:**
-- *Runtime*: 217 ms
-- *Memory*: 10.20 MB
+- *Runtime*: 10 ms
+- *Memory*: 11.9 MB

@@ -1,14 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define STD_HASHMAP_SIZE 10000
-
-/* the entries of the hashmap are formed in such way, that the hash function maps 
- * each key to the unique index, but if we are trying to pack the same two keys 
- * in the hashmap, then it may lead to a collision, which will require recalculation
- * of the index
- */
-typedef enum { EMPTY = 0, OCCUPIED = 1, DELETED = 2} entryStatus; 
+typedef enum { EMPTY = 0, OCCUPIED = 1} entryStatus; 
 typedef struct Entry {
 	int key;
 	int value;
@@ -21,36 +14,12 @@ typedef struct {
 	int size;
 } HashMap;
 
-void printHashMap(HashMap* table) {
-	// table is a pointer to the hashmap, therefore we access it's values via ->
-	printf("HashMap at addr: %p\n", (void*)table); // %p expects (void*)
-	int key, val, nums_idx;
-	for (int i = 0; i < table->size; i++) {
-		key = table->buckets[i]->key;
-		val = table->buckets[i]->value;
-		nums_idx = table->buckets[i]->nums_idx;
-		printf("[%d]: {%d:[%d, %d]} -- ", i, key, val, nums_idx);
-		switch (table->buckets[i]->status) {
-			case EMPTY:
-				printf("EMPTY\n");
-				break;
-			case OCCUPIED:
-				printf("OCCUPIED\n");
-				break;
-			case DELETED:
-				printf("DELETED\n");
-				break;
-		}
-	}
-}
-
 int mod(int a, int b) { // appratentlly % is not mod, but remainder
 	int r = a % b;
 	return r < 0 ? r + b : r;
 }
 
 int hashFunction(int key, int attempt, int tableSize) {
-	// linear probing 
 	int idx = mod((mod(key, tableSize) + attempt), tableSize);
 	return idx;
 }
@@ -64,14 +33,13 @@ void addHashMapEntry(HashMap* table, int key, int value, int nums_idx) {
 			table->buckets[idx]->value = value;
 			table->buckets[idx]->status = OCCUPIED;
 			table->buckets[idx]->nums_idx = nums_idx;
-			printf("Entry for hashmap: %p added. [%d]: {%d:%d} (nums idx: %d)\n", (void*)table, 
-					idx, key, value, nums_idx);
 			break;
 		} 
 	}
 }
 
 HashMap* createHashMap(int size) {
+	size = 1e4;
 	Entry** entries = malloc(sizeof(Entry*) * size);
 	for (int i=0; i < size; i++) {
 		entries[i] = malloc(sizeof(Entry));
@@ -92,27 +60,15 @@ int isKeyOccupied(HashMap *table, int key) {
 	for (int i = 0; i < table->size; i++) {
 		idx = hashFunction(key, i, table->size);
 		if (table->buckets[idx]->status == OCCUPIED && table->buckets[idx]->key == key) {
-			printf("Key {%d:%d (%d)} is occupied at id %d\n", key, table->buckets[idx]->value, idx, 
-					table->buckets[idx]->nums_idx);
 			return idx;
 		} else if (table->buckets[idx]->status == EMPTY) {
 			break;
 		}
 	}
-	printf("Key %d is not occupied\n", key);
 	return -1;
 }
 
 void freeHashMap(HashMap *table) {
-	// Entry** entries = malloc(sizeof(Entry*) * size);
-	// for (int i=0; i < size; i++) {
-	// 	entries[i] = malloc(sizeof(Entry));
-	// 	entries[i]->key = 0;
-	// 	entries[i]->value = 0;
-	// 	entries[i]->status = EMPTY;
-	// 	entries[i]->nums_idx = 0;
-	// }
-	// HashMap *table = malloc(sizeof(HashMap));
 	for (int i = 0; i < table->size; i++) {
 		free(table->buckets[i]);
 	}
@@ -130,17 +86,15 @@ int *twoSum(int *nums, int numsSize, int target, int *returnSize) {
 	for (int i = 0; i < numsSize; i++) {
 		complement = target - nums[i];
 		searchRes = isKeyOccupied(table, complement); // 0
-		addHashMapEntry(table, nums[i], complement, i);
 		if (searchRes != -1) {
 			indices[0] = table->buckets[searchRes]->nums_idx;
 			indices[1] = i;
-			printHashMap(table);
 			freeHashMap(table);
 			return indices;
-		} 
+		} else {
+			addHashMapEntry(table, nums[i], complement, i);
+		}
 	}
-	printHashMap(table);
-	freeHashMap(table);
 	return NULL;
 }
 
