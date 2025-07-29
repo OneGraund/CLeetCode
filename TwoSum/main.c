@@ -39,7 +39,7 @@ void addHashMapEntry(HashMap* table, int key, int value, int nums_idx) {
 }
 
 HashMap* createHashMap(int size) {
-	size = 1e4;
+	size = size*2;
 	Entry** entries = malloc(sizeof(Entry*) * size);
 	for (int i=0; i < size; i++) {
 		entries[i] = malloc(sizeof(Entry));
