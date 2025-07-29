@@ -15,6 +15,12 @@ Better solution would be to create a hashmap. Intuition goes like that:
 - store the value from array as a key and the complement as value of this entry
 - if found, nice
 
-**Current stats:**
+**Current bruteforce stats:**
 - *Runtime*: 99 ms
 - *Memory*: 8.67 MB
+
+I did make a hashmap solution, which is twice as inefficient as the bruteforce one... How? No idea yet
+
+**Current hashmap stats:**
+- *Runtime*: 217 ms
+- *Memory*: 10.20 MB
