@@ -4,7 +4,7 @@ Just a repo, where I practice leetcode tasks in C programming language
 ## TODO
 ---
 - [x] 1. TwoSum
-- [ ] 9. Palindrome Number
+- [x] 9. Palindrome Number
 - [ ] 13. Roman to Integer
 
 ### TwoSum
@@ -25,3 +25,12 @@ Increasing the hashmap size to twice the `numsSize` resulted in 10 ms runtime!!!
 **Current hashmap stats:**
 - *Runtime*: 10 ms
 - *Memory*: 11.9 MB
+
+### Palindrome
+---
+Easy task.
+
+**Current stats:**
+- *Runtime*: 10 ms
+- *Memory*: 9.07 MB
+
