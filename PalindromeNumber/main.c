@@ -7,7 +7,8 @@ bool isPalindrome(int x) {
 	else if (x==0) return true;
 
 	int intSize = 0;
-	int* intAsArr = calloc(10, sizeof(int));
+	// int* intAsArr = malloc(10 * sizeof(int));
+	int intAsArr[10];
 	int remainder = 0;
 	while (x > 0) {
 		remainder = x % 10;
@@ -15,14 +16,14 @@ bool isPalindrome(int x) {
 		intSize++;
 		x /= 10;
 	}
-	printf("[");
-	for (int i = 0; i < intSize-1; i++)
-		printf("%d, ", intAsArr[i]);
-	printf("%d]\n", intAsArr[intSize-1]);
+	// printf("[");
+	// for (int i = 0; i < intSize-1; i++)
+	// 	printf("%d, ", intAsArr[i]);
+	// printf("%d]\n", intAsArr[intSize-1]);
 
 	for (int i = 0; i < intSize; i++) {
 		if (intAsArr[i] != intAsArr[intSize-i-1]) {
-			printf("[%d] != [%d]\n", i, intSize-i);
+			// printf("[%d] != [%d]\n", i, intSize-i);
 			return false;
 		}
 	}

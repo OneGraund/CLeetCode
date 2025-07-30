@@ -29,8 +29,9 @@ Increasing the hashmap size to twice the `numsSize` resulted in 10 ms runtime!!!
 ### Palindrome
 ---
 Easy task.
+Changing intAsArr from heap allocation to the stack increased speed from 10ms to 2ms lol
 
 **Current stats:**
-- *Runtime*: 10 ms
-- *Memory*: 9.07 MB
+- *Runtime*: 2 ms
+- *Memory*: 9.51 MB
 
