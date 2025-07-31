@@ -47,6 +47,8 @@ For Example: IX - 9, but IIX != 8, because VIII is.
 
 This fact allows me not to fuck around with all of those linked lists and traversals, but it was really fun, so I am leaving this solution in repo.
 
+Edit: actually the linked list solution is 0 ms! not as efficient as simply going through the string only once, but still it's extra cool!!! I just forgot to delete the print statements, lol
+
 **Current stats:**
-- *Runtime*: 42 ms
-- *Memory*: 11.23 MB
+- *Runtime*: 0 ms
+- *Memory*: 11.19 MB
