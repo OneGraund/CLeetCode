@@ -41,6 +41,12 @@ Interestin task, used Linked list for that and therefore overengineered it too m
 Don't know if gonna be possible to improove it using this style, but we'll see.
 With all of those memory allocations on heap it's definately not gonna be possible to make it very efficient.
 
+Well, all in all, I think that my first solution is really good for languages that may change a lot in its definition.
+Meaning, that I didn't think that in roman languages only one character before a bigger one represents a minus action.
+For Example: IX - 9, but IIX != 8, because VIII is.
+
+This fact allows me not to fuck around with all of those linked lists and traversals, but it was really fun, so I am leaving this solution in repo.
+
 **Current stats:**
 - *Runtime*: 42 ms
 - *Memory*: 11.23 MB
