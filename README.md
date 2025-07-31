@@ -5,7 +5,7 @@ Just a repo, where I practice leetcode tasks in C programming language
 ---
 - [x] 1. TwoSum
 - [x] 9. Palindrome Number
-- [ ] 13. Roman to Integer
+- [x] 13. Roman to Integer
 
 ### TwoSum
 ---
@@ -35,3 +35,12 @@ Changing intAsArr from heap allocation to the stack increased speed from 10ms to
 - *Runtime*: 2 ms
 - *Memory*: 9.51 MB
 
+### RomanToInteger
+---
+Interestin task, used Linked list for that and therefore overengineered it too much.
+Don't know if gonna be possible to improove it using this style, but we'll see.
+With all of those memory allocations on heap it's definately not gonna be possible to make it very efficient.
+
+**Current stats:**
+- *Runtime*: 42 ms
+- *Memory*: 11.23 MB
