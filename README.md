@@ -6,6 +6,9 @@ Just a repo, where I practice leetcode tasks in C programming language
 - [x] 1. TwoSum
 - [x] 9. Palindrome Number
 - [x] 13. Roman to Integer
+- [x] 14. Longest Common Prefix
+- [x] 20. Valid Parentheses
+- [x] 21. Merge Two Sorted Lists
 
 ### TwoSum
 ---
@@ -52,3 +55,19 @@ Edit: actually the linked list solution is 0 ms! not as efficient as simply goin
 **Current stats:**
 - *Runtime*: 0 ms
 - *Memory*: 11.19 MB
+
+
+### Longest Common Prefix
+---
+
+
+### Valid Parentheses
+---
+
+### Merge Two Sorted Lists
+---
+Went with composition of a new string by traversing each of the given individually. Unfortunatelly, that was very inefficient (because of mallocs) and as I saw in other submissions, once could simply connect both lists together and then sort one big sll. Whatever, I had fun with pointers stuff though.
+**Current stats:**
+- *Runtime*: 2 ms
+- *Memory*: 11.69 MB
+
