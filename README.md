@@ -9,6 +9,7 @@ Just a repo, where I practice leetcode tasks in C programming language
 - [x] 14. Longest Common Prefix
 - [x] 20. Valid Parentheses
 - [x] 21. Merge Two Sorted Lists
+- [x] 26. Remove Duplicates From Sorted Array
 
 ### TwoSum
 ---
@@ -71,3 +72,9 @@ Went with composition of a new string by traversing each of the given individual
 - *Runtime*: 2 ms
 - *Memory*: 11.69 MB
 
+### Remove Duplicates From Sorted Array
+---
+easy task, just traversed once. though created a fancy struct for testing lmao
+**Current stats:**
+- *Runtime*: 0 ms
+- *Memory*: 12.92 MB
