@@ -85,3 +85,12 @@ really easy, similar to last task, have to do a medium task tomorrow, cause fuck
 **Current stats:**
 - *Runtime*: 0 ms
 - *Memory*: 10.39 MB
+
+
+### FindTheIndexOfTheFirstOccurreenceInAString
+---
+a little more interesting task with char pointer stuff, took me more time then the previous task
+**Current stats:**
+- *Runtime*: 0 ms
+- *Memory*: 8.93 MB
+
