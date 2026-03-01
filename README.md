@@ -78,3 +78,10 @@ easy task, just traversed once. though created a fancy struct for testing lmao
 **Current stats:**
 - *Runtime*: 0 ms
 - *Memory*: 12.92 MB
+
+### RemoveElement.
+---
+really easy, similar to last task, have to do a medium task tomorrow, cause fuck that. did use testcases once again
+**Current stats:**
+- *Runtime*: 0 ms
+- *Memory*: 10.39 MB
